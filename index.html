@@ -29,8 +29,8 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <div class="nav-signin border">
-                <p><span>Hello, sign in</span></p>
+            <div class="nav-signin border" id="authBtn">
+                <p><span id="authGreeting">Hello, sign in</span></p>
                 <p class="nav-second">Account & Lists</p>
             </div>
             <div class="nav-return border">
@@ -98,6 +98,28 @@
     </div>
 
     <div class="hero-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="images/hero_image.jpg" alt="Hero 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/hero2_image.jpg" alt="Hero 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/hero3_image.jpg" alt="Hero 3">
+            </div>
+            <button class="carousel-btn prev" id="prevBtn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" id="nextBtn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
         <div class="hero-msg">
             <p>You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="#">Click here to go to amazon.in</a></p>
         </div>
@@ -248,6 +270,61 @@
             © 1996-2024, Amazon.com, Inc. or its affiliates
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Auth Modal -->
+    <div class="auth-overlay" id="authOverlay"></div>
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-header">
+            <h2 id="authModalTitle">Sign In</h2>
+            <i class="fa-solid fa-times" id="closeAuthModal"></i>
+        </div>
+        <div class="auth-modal-body">
+            <!-- Sign In Form -->
+            <form class="auth-form" id="signInForm">
+                <div class="form-group">
+                    <label for="signInEmail">Email</label>
+                    <input type="email" id="signInEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signInPassword">Password</label>
+                    <input type="password" id="signInPassword" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Sign In</button>
+                <p class="auth-toggle">
+                    New customer? <span id="showSignUp">Create your account</span>
+                </p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form class="auth-form hidden" id="signUpForm">
+                <div class="form-group">
+                    <label for="signUpName">Your name</label>
+                    <input type="text" id="signUpName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpEmail">Email</label>
+                    <input type="email" id="signUpEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpPassword">Password</label>
+                    <input type="password" id="signUpPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="signUpConfirmPassword">Re-enter password</label>
+                    <input type="password" id="signUpConfirmPassword" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Account</button>
+                <p class="auth-toggle">
+                    Already have an account? <span id="showSignIn">Sign in</span>
+                </p>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
