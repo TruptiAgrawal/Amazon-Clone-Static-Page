@@ -409,7 +409,7 @@ function updateAuthGreeting() {
     if (currentUser) {
         authGreeting.textContent = `Hello, ${currentUser.name}`;
     } else {
-        authGreeting.textContent = 'Hello, sign in';
+        authGreeting.textContent = 'Sign in';
     }
 }
 

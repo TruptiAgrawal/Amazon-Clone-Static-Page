@@ -686,6 +686,10 @@ ul a:hover {
         width: 45%;
         margin: 10px;
     }
+    .nav-return span {
+    font-size: 20px;
+    font-weight: bold;
+    }
 }
 
 @media (max-width: 480px) {
